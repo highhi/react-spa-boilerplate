@@ -1,0 +1,30 @@
+.Grid {
+  display: flex;
+
+  &.-stretch {
+    align-items: stretch;
+  }
+
+  &.-center {
+    align-items: center;
+  }
+
+  &.-end {
+    justify-content: flex-end;
+  }
+
+  &.-between {
+    justify-content: space-between;
+  }
+}
+
+.Grid__cell {
+  &.-fill {
+    flex: 1;
+  }
+
+  &.-mono {
+    flex-grow: 1;
+    width: 100%;
+  }
+}

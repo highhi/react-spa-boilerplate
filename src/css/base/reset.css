@@ -1,0 +1,25 @@
+@import "ress.css";
+
+* {
+  font-weight: normal;
+}
+
+[type=reset],
+[type=submit],
+button,
+html [type=button] {
+  appearance: none;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
