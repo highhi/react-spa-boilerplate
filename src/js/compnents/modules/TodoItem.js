@@ -1,14 +1,22 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
-export default class Todo extends Component {
-  render() {
-    const { id, text, date } = this.props.todo;
+const Todo = (props) => {
+  const { id, text, date } = props.todo;
 
-    return(
-      <li data-todo-id={ id }>
-        <span>{ text }</span>
-        <span>{ date }</span>
-      </li>
-    );
-  }
-}
+  return (
+    <li data-todo-id = { id }>
+      <span>{ text }</span>
+      <span>{ date }</span>
+    </li>
+  );
+};
+
+Todo.propTypes = {
+  todo: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+export default Todo;

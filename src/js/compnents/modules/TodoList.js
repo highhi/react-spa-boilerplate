@@ -1,19 +1,14 @@
-import React, { Component, PropTypes } from 'react';
-import { findDOMNode } from 'react-dom';
-import * as todoActions from 'actions/todos';
+import React, { PropTypes } from 'react';
 
-export default class TodoList extends Component {
-  constructor(props) {
-    super(props);
-  }
+const TodoList = (props) =>
+  <div>
+    <ul>
+      { props.children }
+    </ul>
+  </div>;
 
-  render() {
-    return(
-      <div>
-        <ul>
-          { this.props.children }
-        </ul>
-      </div>
-    );
-  }
-}
+TodoList.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+};
+
+export default TodoList;

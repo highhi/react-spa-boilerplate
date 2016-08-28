@@ -7,7 +7,7 @@
     "start": "node server.js",
     "build": "webpack -d --progress",
     "release": "webpack -p --config webpack.config.production.js --progress",
-    "lint:js": "eslint src/js/**/*.js"
+    "lint:js": "eslint ./src/js/**/*.js"
   },
   "author": "highhi",
   "license": "MIT",

@@ -8,7 +8,8 @@ config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
 new WebpackDevServer(webpack(config), {
   hot: true,
-  publicPath: config.output.publicPath
+  publicPath: config.output.publicPath,
+  contentBase: 'dist'
 }).listen(8000, 'localhost', function (err, result) {
   if (err) {
     return console.log(err);

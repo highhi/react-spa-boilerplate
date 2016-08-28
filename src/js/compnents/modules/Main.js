@@ -1,21 +1,14 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
-const styles = {
-  paddingLeft: '256px'
+const Main = (props) =>
+  <main style = { { paddingLeft: '256px' } }>
+    <div style = { { margin: '48px 72px' } }>
+      { props.children }
+    </div>
+  </main>;
+
+Main.propTypes = {
+  children: PropTypes.element.isRequired,
 };
 
-export default class Main extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return(
-      <main style={{ paddingLeft: '256px' }}>
-        <div style={{ margin: '48px 72px' }}>
-          { this.props.children }
-        </div>
-      </main>
-    );
-  }
-}
+export default Main;
