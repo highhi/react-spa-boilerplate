@@ -9,12 +9,17 @@ import TodoItem from 'modules/TodoItem';
 import Calender from 'parts/Calender';
 import { keysToCamelCase } from 'util';
 
-const inputName = {
-  todo: 'input_todo',
+const inputTodo = {
+  text: 'input_text',
   date: 'input_date',
 };
 
 class Todos extends Component {
+  static propTypes = {
+    todos: PropTypes.array.isRequired,
+    addTodo: PropTypes.func.isRequired,
+  }
+
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,14 +27,14 @@ class Todos extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const { inputTodo, inputDate } = keysToCamelCase(event.target,
-      [inputName.todo, inputName.date]
+    const { inputText, inputDate } = keysToCamelCase(event.target,
+      [inputTodo.text, inputTodo.date]
     );
 
-    if (!inputTodo.value || !inputDate.value) return;
+    if (!inputText.value || !inputDate.value) return;
 
-    this.props.addTodo(inputTodo.value, inputDate.value);
-    inputTodo.value = '';
+    this.props.addTodo(inputText.value, inputDate.value);
+    inputText.value = '';
   }
 
   renderTodos() {
@@ -46,23 +51,18 @@ class Todos extends Component {
         </TodoList>
         <form onSubmit = { this.handleSubmit }>
           <TextField
-            name = { inputName.todo }
+            name = { inputTodo.text }
             floatingLabelText = "Input Todo"
             floatingLabelFixed = { false }
             fullWidth
           />
-          <Calender hintText = "日付" name = { inputName.date } />
+          <Calender hintText = "日付" name = { inputTodo.date } />
           <RaisedButton primary type = "submit" label = "送信" />
         </form>
       </div>
     );
   }
 }
-
-Todos.propTypes = {
-  todos: PropTypes.array.isRequired,
-  addTodo: PropTypes.func.isRequired,
-};
 
 function mapStateToProps(state) {
   const { todos } = state;

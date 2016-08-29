@@ -33,18 +33,15 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'js/bundle.js',
-    publicPath: '/dist/'
+    publicPath: '/'
   },
 
   module: {
     loaders: [{
       test: /\.js$/,
       include: path.join(__dirname, 'src', 'js'),
-      exclude: [/node_modules/, /\.json$/],
-      loader: 'babel',
-      query: {
-        presets: ['es2015', 'react', 'stage-1', 'react-hmre']
-      }
+      exclude: /node_modules/,
+      loaders: ['babel']
     }, {
       test: /\.css$/,
       include: path.join(__dirname, 'src', 'css'),

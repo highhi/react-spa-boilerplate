@@ -5,6 +5,7 @@ import areIntlLocalesSupported from 'intl-locales-supported';
 const dateTimeFormat = areIntlLocalesSupported(['ja']) ? Intl.DateTimeFormat : (() => {
   const IntlPolyfill = require('intl').DateTimeFormat;
   require('intl/locale-data/jsonp/ja');
+
   return IntlPolyfill;
 })();
 
