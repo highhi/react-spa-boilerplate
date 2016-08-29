@@ -41,7 +41,7 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       include: path.join(__dirname, 'src', 'js'),
-      exclude: [/node_modules/, /\.json$/],
+      exclude: /node_modules/,
       loader: 'babel',
       query: {
         presets: ['es2015', 'react', 'stage-1']
@@ -67,19 +67,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
-    }),
     new webpack.DefinePlugin({
-      'process.env':{
-        'NODE_ENV': JSON.stringify('production')
-      }
+      'process.env': { 'NODE_ENV': JSON.stringify('production') }
     }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({ compressor: {
+      warnings: false
+    }}),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.AggressiveMergingPlugin(),
     new CompressionPlugin({
       asset: '[path].gz[query]',
-      algorithm: "gzip",
+      algorithm: 'gzip',
       test: /\.js$|\.css$|\.html$/
     })
   ]
