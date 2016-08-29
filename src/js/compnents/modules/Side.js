@@ -13,7 +13,7 @@ export default class Side extends Component {
     return (
       <div>
         <Drawer open = { this.state.open }>
-          <MenuItem onTouchTap = { () => hashHistory.push('/') }>TOP</MenuItem>
+          <MenuItem onTouchTap = { () => hashHistory.push('/') }>HOME</MenuItem>
           <MenuItem onTouchTap = { () => hashHistory.push('/books') }>BOOK</MenuItem>
         </Drawer>
       </div>
