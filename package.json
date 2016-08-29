@@ -7,7 +7,7 @@
     "start": "node server.js",
     "build": "webpack -d --progress",
     "release": "webpack -p --config webpack.config.production.js --progress",
-    "lint:js": "eslint ./src/js/**/*.js"
+    "lint": "eslint src js/*.js"
   },
   "author": "highhi",
   "license": "MIT",
@@ -39,7 +39,6 @@
     "power-assert": "^1.4.1",
     "precss": "^1.4.0",
     "react-hot-loader": "^1.3.0",
-    "react-router-scroll": "^0.3.2",
     "sinon": "^1.17.5",
     "style-loader": "^0.13.1",
     "stylelint": "^7.1.0",
@@ -55,10 +54,10 @@
     "react": "^15.3.0",
     "react-document-meta": "^2.0.3",
     "react-dom": "^15.3.0",
-    "react-mdl": "^1.6.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "react-router-redux": "^4.0.5",
+    "react-router-scroll": "^0.3.2",
     "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",

@@ -40,7 +40,7 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       include: path.join(__dirname, 'src', 'js'),
-      exclude: [/node_modules/, /\.json$/],
+      exclude: /node_modules/,
       loader: 'babel',
       query: {
         presets: ['es2015', 'react', 'stage-1', 'react-hmre']
