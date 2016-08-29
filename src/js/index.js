@@ -9,7 +9,6 @@ import configureStore from 'store/configureStore';
 import App from 'containers/App';
 import Todos from 'containers/Todos';
 import Books from 'containers/Books';
-import 'whatwg-fetch';
 
 const store = configureStore();
 const history = syncHistoryWithStore(hashHistory, store);
@@ -26,12 +25,6 @@ const customUseScroll = useScroll((prevRouterProps, { routes }) => {
 });
 
 injectTapEventPlugin();
-
-fetch('./fake.json').then((res) => {
-  return res.body;
-}).then((body) => {
-  console.log(body);
-});
 
 render(
   <Provider store = { store }>
