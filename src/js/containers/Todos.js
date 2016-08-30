@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import { TextField } from 'material-ui';
 import * as todoActions from 'actions/todos';
-import TodoList from 'modules/TodoList';
-import TodoItem from 'modules/TodoItem';
-import Calender from 'parts/Calender';
+import TodoList from 'components/modules/TodoList';
+import TodoItem from 'components/modules/TodoItem';
+import Calender from 'components/parts/Calender';
 import { keysToCamelCase } from 'util';
 
 const inputTodo = {

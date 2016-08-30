@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import Layout from 'modules/Layout';
-import Meta from 'parts/Meta';
+import Layout from 'components/modules/Layout';
+import Meta from 'components/parts/Meta';
 
 export default class App extends Component {
   static propTypes = {

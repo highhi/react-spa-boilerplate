@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
+import { getImagePath } from 'util';
 
 const Image = (props) => {
-  const src = require(`img/${props.src}`);
+  const src = getImagePath(props.src);
   const { width, height, alt } = props;
 
   return (

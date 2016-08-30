@@ -14,8 +14,7 @@ module.exports = {
     extensions: ['', '.js', 'css', '.json'],
     alias: {
       img: path.join(__dirname, './src/img'),
-      parts: path.join(__dirname, './src/js/compnents/parts'),
-      modules: path.join(__dirname, './src/js/compnents/modules'),
+      components: path.join(__dirname, './src/js/components'),
       containers: path.join(__dirname, './src/js/containers'),
       actions: path.join(__dirname, './src/js/actions'),
       reducers: path.join(__dirname, './src/js/reducers'),

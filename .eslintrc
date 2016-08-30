@@ -6,7 +6,6 @@
   },
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "global-require": 0,
     "react/require-extension": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": [2, { ignore: ['^parts', '^modules', '^actions', '^store', '^containers', '^reducers'] }]

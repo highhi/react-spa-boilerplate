@@ -1,7 +1,6 @@
 import _ from 'lodash';
 
-/* eslint import/prefer-default-export: 0 */
-export const keysToCamelCase = (obj, keys = null) => {
+export function keysToCamelCase(obj, keys = null) {
   const clone = {};
   const objKeys = Array.isArray(keys) ? keys : (() => {
     if (_.isPlainObject(keys)) {
@@ -17,4 +16,10 @@ export const keysToCamelCase = (obj, keys = null) => {
   });
 
   return clone;
-};
+}
+
+export function getImagePath(path) {
+  /* eslint-disable global-require */
+  return require(`img/${path}`);
+  /* eslint-enable global-require */
+}

@@ -3,8 +3,10 @@ import DatePicker from 'material-ui/DatePicker';
 import areIntlLocalesSupported from 'intl-locales-supported';
 
 const dateTimeFormat = areIntlLocalesSupported(['ja']) ? Intl.DateTimeFormat : (() => {
+  /* eslint-disable global-require */
   const IntlPolyfill = require('intl').DateTimeFormat;
   require('intl/locale-data/jsonp/ja');
+  /* eslint-enable global-require */
 
   return IntlPolyfill;
 })();
