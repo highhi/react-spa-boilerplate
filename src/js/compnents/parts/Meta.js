@@ -17,6 +17,10 @@ function getMeta(path) {
 }
 
 export default class Meta extends Component {
+  static propTypes = {
+    path: PropTypes.string.isRequired,
+  }
+
   constructor(props) {
     super(props);
     this.state = getMeta(props.path);
@@ -30,7 +34,3 @@ export default class Meta extends Component {
     return <DocumentMeta { ...this.state } />;
   }
 }
-
-Meta.propTypes = {
-  path: PropTypes.string.isRequired,
-};

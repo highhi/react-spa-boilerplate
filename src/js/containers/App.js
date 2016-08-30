@@ -5,6 +5,17 @@ import Layout from 'modules/Layout';
 import Meta from 'parts/Meta';
 
 export default class App extends Component {
+  static propTypes = {
+    children: PropTypes.object.isRequired,
+    location: PropTypes.shape({
+      pathname: PropTypes.string.isRequired,
+    }),
+  }
+
+  static childContextTypes = {
+    muiTheme: PropTypes.object.isRequired,
+  }
+
   getChildContext() {
     return {
       muiTheme: getMuiTheme(baseTheme),
@@ -20,14 +31,3 @@ export default class App extends Component {
     );
   }
 }
-
-App.childContextTypes = {
-  muiTheme: PropTypes.object.isRequired,
-};
-
-App.propTypes = {
-  children: PropTypes.object.isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }),
-};

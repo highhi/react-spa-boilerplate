@@ -8,7 +8,6 @@ describe('todo actions', () => {
 
     const expected = {
       type: todoActions.ADD_TODO,
-      id: 0,
       text,
       date
     };

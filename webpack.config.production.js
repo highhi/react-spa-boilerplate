@@ -34,7 +34,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'release'),
     filename: 'js/bundle-[hash].js',
-    publicPath: './'
+    publicPath: '/'
   },
 
   module: {
@@ -42,7 +42,7 @@ module.exports = {
       test: /\.js$/,
       include: path.join(__dirname, 'src', 'js'),
       exclude: /node_modules/,
-      loader: 'babel'
+      loaders: ['babel']
     }, {
       test: /\.css$/,
       include: path.join(__dirname, 'src', 'css'),
