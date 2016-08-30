@@ -4,7 +4,7 @@ const Todo = (props) => {
   const { id, text, date } = props.todo;
 
   return (
-    <li data-todo-id = { id }>
+    <li data-todo-id={id}>
       <span>{ text }</span>
       <span>{ date }</span>
     </li>

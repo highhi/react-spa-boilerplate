@@ -31,6 +31,6 @@ export default class Meta extends Component {
   }
 
   render() {
-    return <DocumentMeta { ...this.state } />;
+    return <DocumentMeta {...this.state} />;
   }
 }

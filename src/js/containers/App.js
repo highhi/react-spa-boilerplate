@@ -25,7 +25,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Meta path = { this.props.location.pathname } />
+        <Meta path={this.props.location.pathname} />
         <Layout>{ this.props.children }</Layout>
       </div>
     );

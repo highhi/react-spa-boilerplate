@@ -8,6 +8,7 @@
     "build": "webpack -d --progress",
     "release": "NODE_ENV=production webpack -p --config webpack.config.production.js --progress",
     "lint": "eslint src js/*.js",
+    "lintfix": "eslint --fix src js/*.js",
     "test": "NODE_PATH=./src/js mocha test/**/*.js --compilers js:babel-core/register"
   },
   "author": "highhi",

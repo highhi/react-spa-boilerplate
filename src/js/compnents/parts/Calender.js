@@ -11,10 +11,10 @@ const dateTimeFormat = areIntlLocalesSupported(['ja']) ? Intl.DateTimeFormat : (
 
 const Calender = (props) =>
   <DatePicker
-    hintText = "日付"
-    name = { props.name }
-    DateTimeFormat = { dateTimeFormat }
-    locale = "ja"
+    hintText="日付"
+    name={props.name}
+    DateTimeFormat={dateTimeFormat}
+    locale="ja"
   />;
 
 Calender.propTypes = {

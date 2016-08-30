@@ -39,7 +39,7 @@ class Todos extends Component {
 
   renderTodos() {
     return this.props.todos.map((todo, i) =>
-      <TodoItem key = { i } todo = { todo } />
+      <TodoItem key={i} todo={todo} />
     );
   }
 
@@ -49,15 +49,15 @@ class Todos extends Component {
         <TodoList>
           { this.renderTodos() }
         </TodoList>
-        <form onSubmit = { this.handleSubmit }>
+        <form onSubmit={this.handleSubmit}>
           <TextField
-            name = { inputTodo.text }
-            floatingLabelText = "Input Todo"
-            floatingLabelFixed = { false }
+            name={inputTodo.text}
+            floatingLabelText="Input Todo"
+            floatingLabelFixed={false}
             fullWidth
           />
-          <Calender hintText = "日付" name = { inputTodo.date } />
-          <RaisedButton primary type = "submit" label = "送信" />
+          <Calender hintText="日付" name={inputTodo.date} />
+          <RaisedButton primary type="submit" label="送信" />
         </form>
       </div>
     );

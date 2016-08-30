@@ -6,10 +6,10 @@ const Image = (props) => {
 
   return (
     <img
-      src = { src }
-      width = { width }
-      height = { height }
-      alt = { alt || '' }
+      src={src}
+      width={width}
+      height={height}
+      alt={alt || ''}
     />
   );
 };

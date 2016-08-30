@@ -27,11 +27,11 @@ const customUseScroll = useScroll((prevRouterProps, { routes }) => {
 injectTapEventPlugin();
 
 render(
-  <Provider store = { store }>
-    <Router history = { history } render = { applyRouterMiddleware(customUseScroll) }>
-      <Route path = "/" component = { App }>
-        <IndexRoute component = { Todos } />
-        <Route path = "/books" component = { Books } />
+  <Provider store={store}>
+    <Router history={history} render={applyRouterMiddleware(customUseScroll)}>
+      <Route path="/" component={App}>
+        <IndexRoute component={Todos} />
+        <Route path="/books" component={Books} />
       </Route>
     </Router>
   </Provider>,
