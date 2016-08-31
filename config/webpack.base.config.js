@@ -44,7 +44,7 @@ export default new Config().merge({
   output: {
     path: path.join(__dirname, '../dist'),
     filename: JS_FILE_NAME,
-    publicPath: '/'
+    
   },
 
   module: {

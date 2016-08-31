@@ -20,6 +20,10 @@ module.exports = function(config) {
     webpack: {
       devtool: 'inline-source-map',
 
+      output: {
+        path: '_karma_webpack_'
+      },
+
       resolve: {
         root: [ path.join(__dirname, 'src') ],
         extensions: ['', '.js', 'css'],
