@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import Layout from 'components/modules/Layout';
-import Meta from 'components/parts/Meta';
-import { getPrefixStyles } from 'util';
+import Layout from '__components/modules/Layout';
+import Meta from '__components/parts/Meta';
+import { getPrefixStyles } from '__util';
 
 export default class App extends Component {
   static propTypes = {

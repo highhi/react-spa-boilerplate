@@ -1,4 +1,4 @@
-import { ADD_TODO } from 'actions/todos';
+import { ADD_TODO } from '__actions/todos';
 
 function todo(state = {}, action) {
   const { id, text, date, type } = action;

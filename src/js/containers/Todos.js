@@ -3,11 +3,11 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import { TextField } from 'material-ui';
-import * as todoActions from 'actions/todos';
-import TodoList from 'components/modules/TodoList';
-import TodoItem from 'components/modules/TodoItem';
-import Calender from 'components/parts/Calender';
-import { keysToCamelCase } from 'util';
+import * as todoActions from '__actions/todos';
+import TodoList from '__components/modules/TodoList';
+import TodoItem from '__components/modules/TodoItem';
+import Calender from '__components/parts/Calender';
+import { keysToCamelCase } from '__util';
 
 const inputTodo = {
   text: 'input_text',

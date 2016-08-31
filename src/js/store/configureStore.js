@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from 'reducers';
+import rootReducer from '__reducers';
 
 const middlewares = process.env.NODE_ENV === 'production' ?
   /* eslint-disable global-require */

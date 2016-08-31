@@ -8,6 +8,6 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/require-extension": 0,
     "import/no-extraneous-dependencies": 0,
-    "import/no-unresolved": [2, { ignore: ['^parts', '^modules', '^actions', '^store', '^containers', '^reducers'] }]
+    "import/no-unresolved": [2, { ignore: ['^__actions', '^__store', '^__containers', '^__components', '^__reducers', '^__util'] }]
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 import RaisedButton from 'material-ui/RaisedButton';
-import Image from 'components/parts/Image';
+import Image from '__components/parts/Image';
 
 const Books = () =>
   <div>

@@ -5,10 +5,10 @@ import { useScroll } from 'react-router-scroll';
 import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import configureStore from 'store/configureStore';
-import App from 'containers/App';
-import Todos from 'containers/Todos';
-import Books from 'containers/Books';
+import configureStore from '__store/configureStore';
+import App from '__containers/App';
+import Todos from '__containers/Todos';
+import Books from '__containers/Books';
 
 const store = configureStore();
 const history = syncHistoryWithStore(hashHistory, store);

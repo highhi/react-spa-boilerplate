@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { getImagePath } from 'util';
+import { getImagePath } from '__util';
 
 const Image = (props) => {
   const src = getImagePath(props.src);

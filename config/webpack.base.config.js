@@ -1,10 +1,10 @@
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const Config = require('webpack-config').Config;
-const path = require('path');
-const precss = require('precss');
-const autoprefixer = require('autoprefixer');
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import Config from 'webpack-config';
+import path from 'path';
+import precss from 'precss';
+import autoprefixer from 'autoprefixer';
 
 const ENV = process.env.NODE_ENV;
 const isProd = ENV === 'production';
@@ -12,7 +12,7 @@ const JS_FILE_NAME = isProd ? 'js/bundle-[hash].js' : 'js/bundle.js';
 const CSS_FILE_NAME = isProd ? 'css/style-[hash].css' : 'css/style.css';
 const IMG_FILE_NAME = isProd ? 'file?name=img/[name]-[hash].[ext]' : 'file?name=img/[name].[ext]';
 
-module.exports = new Config().merge({
+export default new Config().merge({
   /*
   Setting for the postcss-js
   see: https://github.com/postcss/postcss-js/blob/9685aa0bc49ef0203db666bab78b6e4621378944/README.md#cannot-resolve-module-fs
@@ -25,14 +25,14 @@ module.exports = new Config().merge({
     root: [ path.join(__dirname, '../src') ],
     extensions: ['', '.js', 'css'],
     alias: {
-      img: path.join(__dirname, '../src/img'),
-      components: path.join(__dirname, '../src/js/components'),
-      containers: path.join(__dirname, '../src/js/containers'),
-      actions: path.join(__dirname, '../src/js/actions'),
-      reducers: path.join(__dirname, '../src/js/reducers'),
-      store: path.join(__dirname, '../src/js/store'),
-      util: path.join(__dirname, '../src/js/util.js'),
-      config: path.join(__dirname, '../src/config'),
+      __img: path.join(__dirname, '../src/img'),
+      __components: path.join(__dirname, '../src/js/components'),
+      __containers: path.join(__dirname, '../src/js/containers'),
+      __actions: path.join(__dirname, '../src/js/actions'),
+      __reducers: path.join(__dirname, '../src/js/reducers'),
+      __store: path.join(__dirname, '../src/js/store'),
+      __util: path.join(__dirname, '../src/js/util.js'),
+      __config: path.join(__dirname, '../src/config'),
     }
   },
 

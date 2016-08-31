@@ -1,10 +1,10 @@
-const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
-const path = require('path');
-const Config = require('webpack-config').Config;
+import webpack from 'webpack';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
+import CompressionPlugin from 'compression-webpack-plugin';
+import path from 'path';
+import Config from 'webpack-config';
 
-module.exports = new Config().extend('config/webpack.base.config.js').merge({
+export default new Config().extend('config/webpack.base.config.js').merge({
   output: {
     path: path.join(__dirname, '../release'),
   },

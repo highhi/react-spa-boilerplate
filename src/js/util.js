@@ -24,7 +24,7 @@ export function keysToCamelCase(obj, keys = null) {
 
 export function getImagePath(path) {
   /* eslint-disable global-require */
-  return require(`img/${path}`);
+  return require(`__img/${path}`);
   /* eslint-enable global-require */
 }
 

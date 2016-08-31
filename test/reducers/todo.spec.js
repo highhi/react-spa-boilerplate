@@ -1,6 +1,6 @@
 import assert from 'power-assert';
-import * as todoActions from '../../src/js/actions/todos';
-import reducer from '../../src/js/reducers/todos';
+import * as actions from '__actions/todos';
+import reducer from '__reducers/todos';
 
 describe('todo reducer', () => {
   it('NO ACTION', () => {
@@ -19,7 +19,7 @@ describe('todo reducer', () => {
     }];
 
     assert.deepStrictEqual(reducer(undefined, {
-      type: todoActions.ADD_TODO,
+      type: actions.ADD_TODO,
       id,
       text,
       date

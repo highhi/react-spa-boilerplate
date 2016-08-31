@@ -1,5 +1,5 @@
 import assert from 'power-assert';
-import * as todoActions from '../../src/js/actions/todos';
+import * as actions from '__actions/todos';
 
 describe('todo actions', () => {
   it('#addTodo()', () => {
@@ -7,11 +7,11 @@ describe('todo actions', () => {
     const date = '2016/01/01';
 
     const expected = {
-      type: todoActions.ADD_TODO,
+      type: actions.ADD_TODO,
       text,
       date
     };
 
-    assert.deepStrictEqual(todoActions.addTodo(text, date), expected);
+    assert.deepStrictEqual(actions.addTodo(text, date), expected);
   });
 });

@@ -1,7 +1,7 @@
-const webpack = require('webpack');
-const Config = require('webpack-config').Config;
+import webpack from 'webpack';
+import Config from 'webpack-config';
 
-module.exports = new Config().extend('config/webpack.base.config.js').merge({
+export default new Config().extend('config/webpack.base.config.js').merge({
   cache: true,
   devtool: 'source-map',
 
