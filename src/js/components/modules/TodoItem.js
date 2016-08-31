@@ -13,7 +13,6 @@ const Todo = (props) => {
 
 Todo.propTypes = {
   todo: PropTypes.shape({
-    id: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
   }).isRequired,
