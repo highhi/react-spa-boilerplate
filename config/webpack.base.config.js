@@ -13,6 +13,14 @@ const CSS_FILE_NAME = isProd ? 'css/style-[hash].css' : 'css/style.css';
 const IMG_FILE_NAME = isProd ? 'file?name=img/[name]-[hash].[ext]' : 'file?name=img/[name].[ext]';
 
 module.exports = new Config().merge({
+  /*
+  Setting for the postcss-js
+  see: https://github.com/postcss/postcss-js/blob/9685aa0bc49ef0203db666bab78b6e4621378944/README.md#cannot-resolve-module-fs
+  */
+  node: {
+    fs: 'empty'
+  },
+
   resolve: {
     root: [ path.join(__dirname, '../src') ],
     extensions: ['', '.js', 'css'],
@@ -53,6 +61,9 @@ module.exports = new Config().merge({
       test: /\.(png|jpg)$/,
       include: path.join(__dirname, '../src/img'),
       loaders: [IMG_FILE_NAME]
+    }, {
+      test: /\.json$/,
+      loader: "json-loader"
     }]
   },
 

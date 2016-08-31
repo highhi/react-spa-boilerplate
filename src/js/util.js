@@ -1,4 +1,8 @@
 import _ from 'lodash';
+import postcssJs from 'postcss-js';
+import autoprefixer from 'autoprefixer';
+
+const prefixer = postcssJs.sync([autoprefixer]);
 
 export function keysToCamelCase(obj, keys = null) {
   const clone = {};
@@ -22,4 +26,8 @@ export function getImagePath(path) {
   /* eslint-disable global-require */
   return require(`img/${path}`);
   /* eslint-enable global-require */
+}
+
+export function getPrefixStyles(styles) {
+  return prefixer(styles);
 }
