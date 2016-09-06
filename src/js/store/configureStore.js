@@ -1,11 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 import rootReducer from '__reducers';
 
 const middlewares = process.env.NODE_ENV === 'production' ?
-  /* eslint-disable global-require */
-  [thunk] : [thunk, require('redux-logger')()];
-  /* eslint-enable global-require */
+  [thunk] : [thunk, logger()];
 
 const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
 
