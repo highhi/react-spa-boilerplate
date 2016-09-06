@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 
 const Todo = (props) => {
-  const { id, text, date } = props.todo;
+  const { text, date } = props.todo;
 
   return (
-    <li data-todo-id={id}>
+    <li>
       <span>{ text }</span>
       <span>{ date }</span>
     </li>

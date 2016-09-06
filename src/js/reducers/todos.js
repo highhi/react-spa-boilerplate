@@ -1,23 +1,14 @@
-import { ADD_TODO } from '__actions/todos';
+import { handleActions } from 'redux-actions';
 
-function todo(state = {}, action) {
-  const { id, text, date, type } = action;
+const todo = handleActions({
+  ADD_TODO: (state, action) => ({
+    text: action.payload.text,
+    date: action.payload.date,
+  }),
+}, {});
 
-  switch (type) {
-    case ADD_TODO:
-      return { id, text, date };
-    default:
-      return state;
-  }
-}
+const todos = handleActions({
+  ADD_TODO: (state, action) => [...state, todo(undefined, action)],
+}, []);
 
-export default function todos(state = [], action) {
-  const { type } = action;
-
-  switch (type) {
-    case 'ADD_TODO':
-      return [...state, todo(undefined, action)];
-    default:
-      return state;
-  }
-}
+export default todos;
