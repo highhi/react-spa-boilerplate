@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
-import { TextField } from 'material-ui';
-import * as todoActions from '__actions/todos';
+import TextField from 'material-ui/TextField';
+import { fetchAddTodo } from '__actions/todos';
 import TodoList from '__components/modules/TodoList';
 import TodoItem from '__components/modules/TodoItem';
 import Calender from '__components/parts/Calender';
@@ -17,7 +16,7 @@ const inputTodo = {
 class Todos extends Component {
   static propTypes = {
     todos: PropTypes.array.isRequired,
-    addTodo: PropTypes.func.isRequired,
+    dispatch: PropTypes.func.isRequired,
   }
 
   constructor(props) {
@@ -31,9 +30,11 @@ class Todos extends Component {
       [inputTodo.text, inputTodo.date]
     );
 
-    if (!inputText.value || !inputDate.value) return;
+    if (!inputText.value || !inputDate.value) {
+      return;
+    }
 
-    this.props.addTodo(inputText.value, inputDate.value);
+    this.props.dispatch(fetchAddTodo(inputText.value, inputDate.value));
     inputText.value = '';
   }
 
@@ -71,8 +72,4 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(todoActions, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Todos);
+export default connect(mapStateToProps)(Todos);

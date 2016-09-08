@@ -3,7 +3,6 @@ import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Layout from '__components/modules/Layout';
 import Meta from '__components/parts/Meta';
-import { getPrefixStyles } from '__util';
 
 export default class App extends Component {
   static propTypes = {
@@ -24,11 +23,8 @@ export default class App extends Component {
   }
 
   render() {
-    const styles = getPrefixStyles({
-      flex: 1,
-    });
     return (
-      <div style={styles}>
+      <div>
         <Meta path={this.props.location.pathname} />
         <Layout>{ this.props.children }</Layout>
       </div>
