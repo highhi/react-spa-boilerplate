@@ -1,25 +1,20 @@
 import React, { Component, PropTypes } from 'react';
-import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import { connect } from 'react-redux';
+import { fetchAuth } from '__actions/auth';
 import Layout from '__components/modules/Layout';
 import Meta from '__components/parts/Meta';
 
-export default class App extends Component {
+class App extends Component {
   static propTypes = {
-    children: PropTypes.object.isRequired,
+    children: PropTypes.element.isRequired,
+    dispatch: PropTypes.func.isRequired,
     location: PropTypes.shape({
       pathname: PropTypes.string.isRequired,
     }),
   }
 
-  static childContextTypes = {
-    muiTheme: PropTypes.object.isRequired,
-  }
-
-  getChildContext() {
-    return {
-      muiTheme: getMuiTheme(baseTheme),
-    };
+  componentWillMount() {
+    this.props.dispatch(fetchAuth());
   }
 
   render() {
@@ -31,3 +26,12 @@ export default class App extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  const { auth } = state;
+  return {
+    auth,
+  };
+}
+
+export default connect(mapStateToProps)(App);
